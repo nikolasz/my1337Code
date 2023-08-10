@@ -25,3 +25,31 @@ The concatenation operator can only be used on strings, not ints or other data t
 The slicing operator can be used on strings, lists, and tuples.
 The slicing operator can be used on strings, lists, and tuples.
 Python uses 0-based indexing, so the first char in a string, list, or tuple is at index 0.
+
+----------------------------------------------------------------------------------------------------------------------------
+Problem:
+Given a string, return a new string where the first and last chars have been exchanged.
+
+
+front_back('code') → 'eodc'
+front_back('a') → 'a'
+front_back('ab') → 'ba'
+
+
+My solution:
+
+def front_back(str):
+  if len(str) < 2:
+    return str
+  else:
+    last_char = str[-1]
+    first_char = str[0]
+    middle = str[1:-1]
+  return last_char + middle + first_char
+
+Intuition:
+If the string is less than 2 chars long, just return the string.
+Otherwise, get the last char, first char, and middle chars.
+Return the concatenation of the last char, middle chars, and first char.
+
+Notes:
